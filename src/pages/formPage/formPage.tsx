@@ -3,7 +3,7 @@ import Form from "../../components/organism/Form/Form";
 
 const FormPage = () => {
   return (
-    <section className="w-93.75 mx-auto pb-15">
+    <section className="mx-auto pb-15">
       <Hero />
       <Form />
     </section>

@@ -3,12 +3,7 @@ import ConfirmationPage from "./pages/ConfirmationPage/ConfirmationPage";
 import FormPage from "./pages/formPage/formPage";
 
 function App() {
-  return (
-    <MainLayOut>
-      <FormPage />
-      <ConfirmationPage />
-    </MainLayOut>
-  );
+  return <MainLayOut>{true ? <ConfirmationPage /> : <FormPage />}</MainLayOut>;
 }
 
 export default App;
