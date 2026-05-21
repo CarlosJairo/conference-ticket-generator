@@ -1,8 +1,10 @@
+import MainLayOut from "./components/layouts/mainLayOut/mainLayOut";
+import FormPage from "./pages/formPage/formPage";
 function App() {
   return (
-    <>
-      <h1>ticket</h1>
-    </>
+    <MainLayOut>
+      <FormPage />
+    </MainLayOut>
   );
 }
 

@@ -22,5 +22,5 @@
 }
 
 body {
-  @apply bg-Neutral-500 font-Incosolata;
+  @apply text-Neutral-0 font-Incosolata;
 }
