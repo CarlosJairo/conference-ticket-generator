@@ -6,7 +6,7 @@ const Form = () => {
   return (
     <div>
       <UploadInput />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 pt-4">
         <TextInput label="Full name" placeholder="Jonathan Kirstof" />
         <TextInput
           label="Email address"
