@@ -1,5 +1,6 @@
 import DefaultAvatar from "../../../assets/DefaultAvatar";
 import { useUserStore } from "../../../store/user";
+import { Image } from "../../atoms/Image/Image";
 
 const Ticket = () => {
   const { fullName, githubUser, url } = useUserStore();
@@ -15,8 +16,7 @@ const Ticket = () => {
   return (
     <section className="m-auto h-40 w-85.5 flex flex-col justify-between p-4 bg-[url(/assets/images/pattern-ticket.svg)] bg-contain bg-no-repeat relative ">
       <div>
-        <img src="/assets/images/logo-full.svg" alt="Logo" />
-
+        <Image src="/assets/images/logo-full.svg" alt="Logo" />
         <p>{formattedDate} / Austin, TX</p>
       </div>
 
