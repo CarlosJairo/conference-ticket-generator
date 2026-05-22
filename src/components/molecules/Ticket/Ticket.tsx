@@ -15,10 +15,10 @@ const Ticket = () => {
 
         <div>
           <p className="text-xl font-medium">Jonatan Kristof</p>
-          <p className="flex">
+          <div className="flex">
             <img src="/assets/images/icon-github.svg" alt="Icon github" />
             <p>@Jonatankristof</p>
-          </p>
+          </div>
         </div>
       </div>
 
