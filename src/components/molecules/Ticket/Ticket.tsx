@@ -31,7 +31,7 @@ const Ticket = () => {
           <p className="text-xl font-medium">{fullName}</p>
 
           <div className="flex gap-1">
-            <img src="/assets/images/icon-github.svg" alt="Icon github" />
+            <Image src="/assets/images/icon-github.svg" alt="Icon github" />
             <p>{githubUser}</p>
           </div>
         </div>
