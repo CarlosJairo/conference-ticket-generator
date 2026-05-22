@@ -1,4 +1,5 @@
 import type { ChangeEvent } from "react";
+import { Image } from "../../atoms/Image/Image";
 
 interface Props {
   url: string;
@@ -17,7 +18,7 @@ const UploadInput = ({ handleChange, url = "" }: Props) => {
           className="bg-Neutral-700 size-12.5 grid place-content-center rounded-xl 
         border-Neutral-500 mb-2 mx-auto overflow-hidden"
         >
-          <img
+          <Image
             src={url === "" ? "/assets/images/icon-upload.svg" : url}
             alt="icon-upload"
           />
@@ -27,7 +28,7 @@ const UploadInput = ({ handleChange, url = "" }: Props) => {
         </p>
       </label>
       <div className="flex gap-2">
-        <img src="/assets/images/icon-info.svg" alt="icon-info" />
+        <Image src="/assets/images/icon-info.svg" alt="icon-info" />
         <p className="text-sm">SVG, PNG, JPG or FIG (MAX. 800X400)</p>
       </div>
     </div>
