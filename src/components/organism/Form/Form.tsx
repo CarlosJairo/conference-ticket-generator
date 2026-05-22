@@ -2,6 +2,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import Button from "../../atoms/button/Button";
 import TextInput from "../../molecules/TextInput/TextInput";
 import UploadInput from "../../molecules/UploadInput/UploadInput";
+import useShowTicket from "../../../hooks/useShowTicket/useShowTicket";
 
 type Inputs = {
   fullname: string;
@@ -16,9 +17,12 @@ const Form = () => {
     handleSubmit,
   } = useForm<Inputs>();
 
+  const { setShowTicket } = useShowTicket();
+
   const sendForm: SubmitHandler<Inputs> = (data: Inputs) => {
     console.log("send Form");
     console.log(data);
+    setShowTicket(true);
   };
 
   return (
