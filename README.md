@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# 🎫 Conference Ticket Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic, fully responsive web application that allows users to generate personalized attendance tickets complete with a custom profile picture. Inspired by Frontend Mentor challenges, this project focuses on robust file handling, form validation, and modern global state management.
 
-Currently, two official plugins are available:
+🚀 **[View Live Demo](https://carlosjairo.github.io/conference-ticket-generator/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📸 Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Project Screenshot](public/assets/images/background-desktop.png)
+_(Tip: You can replace this path with a real screenshot of your app once you upload it to your repo!)_
 
-## Expanding the ESLint configuration
+## 🔥 Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Avatar Upload & Preview:** Allows users to drag and drop or upload their profile picture with instant, client-side image preview capabilities.
+- **Dynamic Ticket Generation:** Instantly creates a custom conference ticket featuring the uploaded user avatar, full name, and Github username.
+- **Robust Form Handling:** Implements real-time input validation, custom regex matching (for email and usernames), and accessible error states using React Hook Form.
+- **Global State Management:** Seamlessly shares user and image data across layout structures and multi-page states using a lightweight Zustand store.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Built With
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React 19** – Leveraging the newest features for component-driven UI architecture.
+- **Vite** – Lightning-fast build tooling and local development optimization.
+- **TypeScript** – Strict type-checking for scalable and predictable code execution.
+- **Tailwind CSS v4** – Modern utility-first styling utilizing the brand-new native Vite compilation engine.
+- **Zustand** – Minimal, fast, and scalable global state management to handle application profile states.
+- **React Hook Form** – High-performance, extensible form validation.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Getting Started Locally
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+If you want to run this project locally, follow these steps:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/carlosjairo/conference-ticket-generator.git](https://github.com/carlosjairo/conference-ticket-generator.git)
+   ```
