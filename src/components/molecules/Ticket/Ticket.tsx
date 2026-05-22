@@ -1,3 +1,4 @@
+import DefaultAvatar from "../../../assets/DefaultAvatar";
 import { useUserStore } from "../../../store/user";
 
 const Ticket = () => {
@@ -20,7 +21,11 @@ const Ticket = () => {
       </div>
 
       <div className="flex gap-3">
-        <img src={url} alt="Image avatar" className="size-11.25 rounded-lg" />
+        {url !== "" ? (
+          <img src={url} alt="Image avatar" className="size-11.25 rounded-lg" />
+        ) : (
+          <DefaultAvatar className="w-6 h-6 text-white" />
+        )}
 
         <div>
           <p className="text-xl font-medium">{fullName}</p>
