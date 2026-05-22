@@ -4,6 +4,7 @@ import TextInput from "../../molecules/TextInput/TextInput";
 import UploadInput from "../../molecules/UploadInput/UploadInput";
 import useShowTicket from "../../../hooks/useShowTicket/useShowTicket";
 import { useUserStore } from "../../../store/user";
+import { useState, type ChangeEvent } from "react";
 
 type Inputs = {
   fullName: string;
@@ -17,7 +18,7 @@ const Form = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<Inputs>();
-
+  const [imageUrl, setImageUrl] = useState<string>("");
   const { setShowTicket } = useShowTicket();
   const { setUser } = useUserStore();
 
@@ -30,12 +31,23 @@ const Form = () => {
       fullName,
       email,
       githubUser,
+      url: imageUrl,
     });
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    setImageUrl(url);
   };
 
   return (
     <div>
-      <UploadInput />
+      <UploadInput handleChange={handleChange} url={imageUrl} />
       <form
         className="flex flex-col gap-4 pt-4"
         onSubmit={handleSubmit(sendForm)}

@@ -1,7 +1,7 @@
 import { useUserStore } from "../../../store/user";
 
 const Ticket = () => {
-  const { fullName, githubUser } = useUserStore();
+  const { fullName, githubUser, url } = useUserStore();
 
   const currentDate = new Date();
 
@@ -12,7 +12,7 @@ const Ticket = () => {
   });
 
   return (
-    <section className="h-40 w-85.5 flex flex-col justify-between p-4 bg-[url(/assets/images/pattern-ticket.svg)] bg-contain bg-no-repeat relative">
+    <section className="m-auto h-40 w-85.5 flex flex-col justify-between p-4 bg-[url(/assets/images/pattern-ticket.svg)] bg-contain bg-no-repeat relative ">
       <div>
         <img src="/assets/images/logo-full.svg" alt="Logo" />
 
@@ -20,11 +20,7 @@ const Ticket = () => {
       </div>
 
       <div className="flex gap-3">
-        <img
-          src="/assets/images/image-avatar.jpg"
-          alt="Image avatar"
-          className="size-11.25 rounded-lg"
-        />
+        <img src={url} alt="Image avatar" className="size-11.25 rounded-lg" />
 
         <div>
           <p className="text-xl font-medium">{fullName}</p>
