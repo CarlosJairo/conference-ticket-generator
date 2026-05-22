@@ -3,9 +3,10 @@ import Button from "../../atoms/button/Button";
 import TextInput from "../../molecules/TextInput/TextInput";
 import UploadInput from "../../molecules/UploadInput/UploadInput";
 import useShowTicket from "../../../hooks/useShowTicket/useShowTicket";
+import { useUserStore } from "../../../store/user";
 
 type Inputs = {
-  fullname: string;
+  fullName: string;
   email: string;
   githubUser: string;
 };
@@ -18,11 +19,18 @@ const Form = () => {
   } = useForm<Inputs>();
 
   const { setShowTicket } = useShowTicket();
+  const { setUser } = useUserStore();
 
   const sendForm: SubmitHandler<Inputs> = (data: Inputs) => {
-    console.log("send Form");
-    console.log(data);
+    const { fullName, email, githubUser } = data;
+
     setShowTicket(true);
+
+    setUser({
+      fullName,
+      email,
+      githubUser,
+    });
   };
 
   return (
@@ -35,9 +43,9 @@ const Form = () => {
         <TextInput
           label="Full name"
           placeholder="Jonathan Kirstof"
-          {...register("fullname", { required: "Full name is required" })}
-          isError={errors.fullname?.type === "required"}
-          errorMessage={errors.fullname?.message}
+          {...register("fullName", { required: "Full name is required" })}
+          isError={errors.fullName?.type === "required"}
+          errorMessage={errors.fullName?.message}
         />
         <TextInput
           label="Email address"

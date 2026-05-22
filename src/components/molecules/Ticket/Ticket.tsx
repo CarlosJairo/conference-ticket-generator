@@ -1,9 +1,22 @@
+import { useUserStore } from "../../../store/user";
+
 const Ticket = () => {
+  const { fullName, githubUser } = useUserStore();
+
+  const currentDate = new Date();
+
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
   return (
     <section className="h-40 w-85.5 flex flex-col justify-between p-4 bg-[url(/assets/images/pattern-ticket.svg)] bg-contain bg-no-repeat relative">
-      <div className="">
+      <div>
         <img src="/assets/images/logo-full.svg" alt="Logo" />
-        <p>Jan 31, 2025 / Austin, TX</p>
+
+        <p>{formattedDate} / Austin, TX</p>
       </div>
 
       <div className="flex gap-3">
@@ -14,10 +27,11 @@ const Ticket = () => {
         />
 
         <div>
-          <p className="text-xl font-medium">Jonatan Kristof</p>
-          <div className="flex">
+          <p className="text-xl font-medium">{fullName}</p>
+
+          <div className="flex gap-1">
             <img src="/assets/images/icon-github.svg" alt="Icon github" />
-            <p>@Jonatankristof</p>
+            <p>{githubUser}</p>
           </div>
         </div>
       </div>
